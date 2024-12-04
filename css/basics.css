@@ -1,0 +1,214 @@
+/*------------------------------------ SUB CSS FOLDERS  ---------------------------------*/
+@import url("./navbar/navbar.css");
+/* @import url("./footer/footer.css"); */
+/*------------------------------------ FONTS --------------------------------------------*/
+@font-face {
+  font-family: THE WILDTERN;
+  src: url(../assets/fonts/THE_WILDTERN.otf);
+}
+@font-face {
+  font-family: Cirkus;
+  src: url(../assets/fonts/Cirkus.ttf);
+}
+/*------------------------------------ VARIABLES ---------------------------------------*/
+:root {
+  /*------ COLORS -------*/
+  --color-purple: #aa60bd;
+  --color-yellow: #f8bf00;
+  --color-pink: #c77a71;
+  --color-green: #9ba61c;
+  --color-orange: #f87d0e;
+  --color-black: #000000;
+  --color-gray: #736d6a;
+
+  --color-dark-red: #330a0c;
+  --color-baby-pink: #eecaa2;
+  --color-white: #f8e9cb;
+  --color-dark-blue: #192c37;
+  --color-red: #660c0a;
+  /*------ FONTS -----------*/
+  --primary-font: THE WILDTERN;
+  --secondary-font: Cirkus;
+  /*------ FONT SIZE -------*/
+  --bigest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  /*------ FONT WEIGHT -------*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*------ Z INDEX -------*/
+  --z-tootip: 10;
+  --z-fixed: 100;
+}
+
+/*-------------------------------------------- GLOBAL STYLES --------------------------------------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--color-body);
+  color: #000000;
+  text-shadow: 0.7px 0.7px 0.7px #2c242344;
+  font-family: var(--primary-font);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*------------------------------------------- SCROLLBAR -------------------------------------------*/
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-baby-pink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-red);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-red);
+}
+
+/*------------------------------------------- REUSABLE CLASSE ---------------------------------------*/
+
+.container {
+  --max-width: 1220px;
+  margin-inline: 1.5rem;
+  --background-color: #655c87;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.section {
+  padding: 2rem 0rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  font-family: var(--font);
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  font-weight: var(--font-semi-bold);
+  font-size: var(--normal-font-size);
+  transition: box-shadow 0.4s;
+  letter-spacing: 0.2rem;
+}
+
+.button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*------------------------------------ RESPONSIVE ---------------------------------------*/
+@media (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .section {
+    padding-block: 5rem 0rem;
+  }
+}
+
+@media (min-width: 320px) {
+  .section {
+    padding-block: 5rem 0rem;
+  }
+}
+
+@media (min-width: 450px) {
+  .section {
+    padding-block: 5rem 0rem;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 1023px) {
+  .section {
+    padding-block: 5rem 0rem;
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 1150px) {
+  .section {
+    padding-block: 5rem 2rem;
+  }
+}
+
+@media (min-width: 1220px) {
+  .container {
+    margin-inline: auto;
+  }
+}

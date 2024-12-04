@@ -1,0 +1,88 @@
+/*------------------------------------ PERFORMERS SECTION ---------------------------------------*/
+.performers {
+  height: 130vh;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-dark-blue);
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.top-left-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bottom-right-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.cards-container {
+  background-color: aqua;
+}
+
+/* .home-container {
+  margin: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+}
+
+.home-title {
+  font-size: var(--bigest-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 0.5rem #c0be9b6c;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.home-description {
+  width: 90%;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  font-family: var(--secondary-font);
+  text-align: center;
+}
+
+/*------------------------------------ RESPONSIVE ---------------------------------------*/
+/* @media (max-width: 430px) {
+  .home-container {
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-container {
+    padding: 1rem 0;
+    text-align: initial;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1220px) {
+  .home-title {
+    font-size: 3rem;
+  }
+  .home-description {
+    width: 75%;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .home-title {
+    font-size: 4rem;
+  }
+  .home-description {
+    font-size: 2rem;
+  }
+} */
