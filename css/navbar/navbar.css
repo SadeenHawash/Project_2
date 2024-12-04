@@ -2,8 +2,8 @@
 .navigation {
   width: 100%;
   position: fixed;
-  top: 2rem;
   left: 0;
+  top: 2rem;
   height: 4rem;
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,15 @@
   background-color: rgba(31, 30, 30, 0.048);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+}
+
+/*For the navbar visibility*/
+.navigation.visible {
+  top: 2rem;
+}
+
+.navigation.hidden {
+  top: -4rem;
 }
 
 .navigation > .container {
@@ -72,7 +81,7 @@
 }
 
 .navigation .nav-menu li a.active {
-  color: red;
+  color: yellow;
 }
 
 /*------------------------------------ RESPONSIVE ---------------------------------------*/

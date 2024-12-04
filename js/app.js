@@ -51,3 +51,28 @@ navBarLinks.forEach((link) => {
     targetSection.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 });
+
+// change the active navigation link during scrolling
+window.addEventListener("scroll", () => {
+  sections.forEach((section) => {
+    // use getBoundingClientRect() to get the section position relative to the viewport
+    const sectionPos = section.getBoundingClientRect();
+    // if the section is in the viewport, change the active link
+    // I've added this to ensure that the link for the section is still active when the half of the section is in the viewport
+    if (
+      sectionPos.top >= 0 &&
+      sectionPos.top <= window.innerHeight * 0.5 &&
+      sectionPos.bottom > 0
+    ) {
+      // remove the active class from all navigation links
+      navBarLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+      // add the active class to the current navigation link
+      const currentSectionLink = document.querySelector(
+        `a[href="#${section.id}"]`
+      );
+      currentSectionLink.classList.add("active");
+    }
+  });
+});
