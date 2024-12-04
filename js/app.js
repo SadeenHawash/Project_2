@@ -38,6 +38,10 @@ navBarMenuToggleBox.addEventListener("click", () => {
 /*------------------------------------ HIGHLIGHT NAVIGATION lINK SECTION AND SMOOTH SCROLLING ---------*/
 const sections = document.querySelectorAll("section");
 const navBarLinks = document.querySelectorAll(".nav-menu a");
+const navBar = document.querySelector(".navigation");
+const scrollToTopButton = document.getElementById("scrollToTop");
+let lastScroll = 0;
+let isScrolling;
 
 // smooth scrolling when the navigation link is clicked
 navBarLinks.forEach((link) => {
@@ -52,8 +56,28 @@ navBarLinks.forEach((link) => {
   });
 });
 
-// change the active navigation link during scrolling
+// change the active navigation link during scrolling and set timer for the navbar visibility
 window.addEventListener("scroll", () => {
+  // visible the navbar while scrolling, hide it if there's no scrolling after 3 seconds
+  if (window.scrollY >= lastScroll) {
+    navBar.classList.remove("hidden");
+    navBar.classList.add("visible");
+  } else {
+    navBar.classList.remove("visible");
+    navBar.classList.add("hidden");
+  }
+  clearTimeout(isScrolling);
+  isScrolling = setTimeout(() => {
+    navBar.classList.remove("visible");
+    navBar.classList.add("hidden");
+  }, 3000);
+  // visible the scroll to top button
+  if (window.scrollY > window.innerHeight) {
+    scrollToTop.classList.add("visible");
+  } else {
+    scrollToTop.classList.remove("visible");
+  }
+  // track navigation links active during scrolling
   sections.forEach((section) => {
     // use getBoundingClientRect() to get the section position relative to the viewport
     const sectionPos = section.getBoundingClientRect();
@@ -75,4 +99,10 @@ window.addEventListener("scroll", () => {
       currentSectionLink.classList.add("active");
     }
   });
+});
+
+// scroll to top button event
+scrollToTop.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
