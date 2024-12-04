@@ -38,6 +38,17 @@
 }
 
 /*------------------------------------ RESPONSIVE ---------------------------------------*/
+@media (max-width: 330px) {
+  .home {
+    height: 150vh;
+  }
+}
+@media (max-width: 360px) {
+  .home {
+    height: 130vh;
+  }
+}
+
 @media (max-width: 430px) {
   .home-container {
     margin: 0 1rem;
